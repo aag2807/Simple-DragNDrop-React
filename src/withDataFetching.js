@@ -46,7 +46,7 @@ const list = [
   ]
   
 
-export default withDataFetching = (WrappedComponent) => {
+export default function withDataFetching (WrappedComponent) {
     return class extends React.Component {
         constructor(){
             super();
@@ -78,12 +78,11 @@ export default withDataFetching = (WrappedComponent) => {
         const { data,loading, error } = this.state;
         return (
             <WrappedComponent
-                key={lane.id} 
-                title={lane.title}
+                key={data} 
                 loading={loading}
                 error={error}
                 {...this.props}
-                
+
                 />
         )
     }

@@ -29,4 +29,4 @@ const Board = ({ lanes, loading, error, data }) => (
     )}
   </BoardWrapper>
   );
-export default Board;
+export default withDataFetching(Board);
